@@ -1,0 +1,70 @@
+package com.example.variousalgorithms.service;
+
+/**
+ * <h1>PrintService</h1>
+ * Service that prints messages.
+ * Decouples System from the business logic.
+ */
+public class PrintService {
+
+    private static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_RESET = "\u001B[0m";
+
+    /**
+     * Prints a {@link String} in console.
+     *
+     * @param message Message to be printed.
+     */
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
+
+    /**
+     * Prints a purple {@link String} in console.
+     *
+     * @param message Message to be printed in purple.
+     */
+    public static void printPurpleMessage(String message) {
+        printMessage(getFormattedMessage("%s %s %s", ANSI_PURPLE, message, ANSI_RESET));
+    }
+
+    /**
+     * Prints a red {@link String} in console.
+     *
+     * @param message Message to be printed in red.
+     */
+    public static void printRedMessage(String message) {
+        printMessage(getFormattedMessage("%s %s %s", ANSI_RED, message, ANSI_RESET));
+    }
+
+    /**
+     * Prints a purple formatted {@link String} in console.
+     *
+     * @param format Format chosen for the message.
+     * @param args   Arguments referenced by the format specifier.
+     */
+    public static void printPurpleFormattedMessage(String format, Object... args) {
+        printPurpleMessage(getFormattedMessage(format, args));
+    }
+
+    /**
+     * Prints a red formatted {@link String} in console.
+     *
+     * @param format Format chosen for the message.
+     * @param args   Arguments referenced by the format specifier.
+     */
+    public static void printRedFormattedMessage(String format, Object... args) {
+        printRedMessage(getFormattedMessage(format, args));
+    }
+
+    /**
+     * Returns a formatted {@link String}.
+     *
+     * @param format Format chosen for the message.
+     * @param args   Arguments referenced by the format specifier.
+     */
+    public static String getFormattedMessage(String format, Object... args) {
+        return String.format(format, args);
+    }
+}

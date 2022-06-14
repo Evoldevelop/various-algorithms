@@ -1,0 +1,1 @@
+Why do I use extends instead of implements for algorithms: https://stackoverflow.com/questions/1460678/java-list-of-objects-that-all-implement-an-interface
