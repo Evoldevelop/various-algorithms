@@ -7,8 +7,9 @@ package com.example.variousalgorithms.service;
  */
 public class PrintService {
 
-    private static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_PURPLE = "\u001B[35m";
     private static final String ANSI_RESET = "\u001B[0m";
 
     /**
@@ -36,6 +37,15 @@ public class PrintService {
      */
     public static void printRedMessage(String message) {
         printMessage(getFormattedMessage("%s %s %s", ANSI_RED, message, ANSI_RESET));
+    }
+
+    /**
+     * Prints a green {@link String} in console.
+     *
+     * @param message Message to be printed in green.
+     */
+    public static void printGreenMessage(String message) {
+        printMessage(getFormattedMessage("%s %s %s", ANSI_GREEN, message, ANSI_RESET));
     }
 
     /**

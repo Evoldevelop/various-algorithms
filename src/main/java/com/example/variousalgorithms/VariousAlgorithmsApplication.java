@@ -16,19 +16,18 @@ public class VariousAlgorithmsApplication {
 
         List<Class<? extends Algorithm>> availableAlgorithms = AlgorithmService.getAllAlgorithms();
 
-        try (Scanner keyboard = new Scanner(System.in)) {
-            while (true) {
-                printMenu(availableAlgorithms);
+        Scanner keyboard = new Scanner(System.in);
+        while (true) {
+            printMenu(availableAlgorithms);
 
-                final String line = keyboard.nextLine();
+            final String line = keyboard.nextLine();
 
-                Integer algorithmNumber = getChosenAlgorithmNumber(line, availableAlgorithms);
-                if (algorithmNumber == 0) {
-                    PrintService.printRedMessage(ErrorValue.INVALID_INPUT);
-                } else {
-                    Class<? extends Algorithm> algorithm = availableAlgorithms.get(--algorithmNumber);
-                    executeAlgorithm(algorithm);
-                }
+            Integer algorithmNumber = getChosenAlgorithmNumber(line, availableAlgorithms);
+            if (algorithmNumber == 0) {
+                PrintService.printRedMessage(ErrorValue.INVALID_INPUT);
+            } else {
+                Class<? extends Algorithm> algorithm = availableAlgorithms.get(--algorithmNumber);
+                executeAlgorithm(algorithm);
             }
         }
     }
@@ -45,7 +44,8 @@ public class VariousAlgorithmsApplication {
                         PrintService.printPurpleFormattedMessage("%d. %s", idx + 1,
                                 algorithm.getDeclaredField("ALGORITHM_NAME").get(algorithmInstance));
                     } catch (Exception e) {
-                        PrintService.printRedFormattedMessage(ErrorValue.ERROR_OCCURRED, e.getMessage());
+                        PrintService.printRedFormattedMessage(ErrorValue.ERROR_OCCURRED, e.getStackTrace());
+                        e.printStackTrace();
                     }
                 });
     }
@@ -63,12 +63,14 @@ public class VariousAlgorithmsApplication {
         return algorithmNumber;
     }
 
-    private static void executeAlgorithm(Class<? extends Algorithm> algorithm) {
+    private static String executeAlgorithm(Class<? extends Algorithm> algorithm) {
         try {
-            Method method = algorithm.getDeclaredMethod("execute", int.class);
-            method.invoke(algorithm.getDeclaredConstructor().newInstance(), 1);
+            Method method = algorithm.getDeclaredMethod("execute");
+            return (String) method.invoke(algorithm.getDeclaredConstructor().newInstance());
         } catch (Exception e) {
-            PrintService.printRedFormattedMessage(ErrorValue.ERROR_OCCURRED, e.getMessage());
+            PrintService.printRedFormattedMessage(ErrorValue.ERROR_OCCURRED, e.getStackTrace());
+            e.printStackTrace();
         }
+        return null;
     }
 }

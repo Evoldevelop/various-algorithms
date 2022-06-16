@@ -4,7 +4,8 @@ import com.example.variousalgorithms.algorithm.Algorithm;
 import com.example.variousalgorithms.algorithm.FibonacciSeriesAlgorithm;
 import com.example.variousalgorithms.algorithm.PrimeNumberAlgorithm;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
