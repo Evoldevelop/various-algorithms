@@ -1,10 +1,10 @@
 package com.example.variousalgorithms.algorithm;
 
+import com.example.variousalgorithms.service.ConsoleService;
 import com.example.variousalgorithms.service.PrintService;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * <h1>FibonacciSeries</h1>
@@ -16,26 +16,9 @@ public class FibonacciSeriesAlgorithm extends Algorithm {
 
     @Override
     public void execute() {
-        int stopper = askForStopperNumber();
+        int stopper = ConsoleService.askForIntegerInput("Insert sequence limit> ");
         List<Integer> fibonacciSerie = calculateSerie(stopper);
         PrintService.printMessage(fibonacciSerie.toString());
-    }
-
-    /**
-     * Asks for an stopper number to be used during the Fibonacci calculation.
-     *
-     * @return The stopper number.
-     */
-    private Integer askForStopperNumber() {
-        Scanner keyboard = new Scanner(System.in);
-        PrintService.printGreenMessage("Insert fibonacci stopper number> ");
-        final String line = keyboard.nextLine();
-
-        try {
-            return Integer.parseInt(line);
-        } catch (NumberFormatException e) {
-            return 0;
-        }
     }
 
     /**

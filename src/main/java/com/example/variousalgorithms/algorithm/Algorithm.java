@@ -6,5 +6,8 @@ package com.example.variousalgorithms.algorithm;
  */
 public abstract class Algorithm {
 
+    /**
+     * Entry point for each algorithm execution.
+     */
     protected abstract void execute();
 }

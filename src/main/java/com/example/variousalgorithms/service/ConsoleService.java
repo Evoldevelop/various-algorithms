@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * <h1>ConsoleService</h1>
- * Service for console related functionality.
+ * Service for console IO related functionality.
  */
 public class ConsoleService {
 
