@@ -26,4 +26,19 @@ public class ConsoleService {
             return 0;
         }
     }
+
+    /**
+     * Asks for an String input by console.
+     *
+     * @param messageRequest Message to be shown for the input request.
+     * @return The input.
+     */
+    public static String askForStringInput(String messageRequest) {
+        Scanner keyboard = new Scanner(System.in);
+
+        PrintService.printGreenMessage(messageRequest);
+        final String line = keyboard.nextLine();
+
+        return line;
+    }
 }
