@@ -6,6 +6,8 @@ import com.example.variousalgorithms.service.PrintService;
 /**
  * <h1>PalindromeAlgorithm</h1>
  * Algorithm that checks if an input is palindrome or not.
+ * Palindrome is a word, phrase, or sequence that reads the same backwards as forwards,
+ * e.g. madam or nurses run.
  */
 public class PalindromeAlgorithm extends Algorithm {
 

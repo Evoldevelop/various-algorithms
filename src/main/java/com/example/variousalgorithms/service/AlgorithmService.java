@@ -1,9 +1,6 @@
 package com.example.variousalgorithms.service;
 
-import com.example.variousalgorithms.algorithm.Algorithm;
-import com.example.variousalgorithms.algorithm.FibonacciSeriesAlgorithm;
-import com.example.variousalgorithms.algorithm.PalindromeAlgorithm;
-import com.example.variousalgorithms.algorithm.PrimeNumberAlgorithm;
+import com.example.variousalgorithms.algorithm.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +15,7 @@ public class AlgorithmService {
     private static final Class<FibonacciSeriesAlgorithm> FIBONACCI_SERIES_ALGORITHM = FibonacciSeriesAlgorithm.class;
     private static final Class<PrimeNumberAlgorithm> PRIME_NUMBER_ALGORITHM = PrimeNumberAlgorithm.class;
     private static final Class<PalindromeAlgorithm> PALINDROME_ALGORITHM = PalindromeAlgorithm.class;
+    private static final Class<ArmstrongAlgorithm> ARMSTRONG_ALGORITHM = ArmstrongAlgorithm.class;
 
     /**
      * Gets all the available algorithms.
