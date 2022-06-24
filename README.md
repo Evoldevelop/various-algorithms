@@ -1,4 +1,6 @@
 # Various Algorithms
+This project has been created with the intention of gathering multiple algorithms into
+one unique project in order to play with them.
 
 ## Technologies
 Project is created with:
