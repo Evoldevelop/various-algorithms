@@ -17,9 +17,12 @@ public class VariousAlgorithmsApplication {
         List<Class<? extends Algorithm>> availableAlgorithms = AlgorithmService.getAllAlgorithms();
 
         Scanner keyboard = new Scanner(System.in);
-        printMenu(availableAlgorithms);
-        String line = keyboard.nextLine();
-        while (!line.equals("quit")) {
+        while (true) {
+            printMenu(availableAlgorithms);
+            final String line = keyboard.nextLine();
+
+            if(line.equals("quit")) System.exit(0);
+
             Integer algorithmNumber = getChosenAlgorithmNumber(line, availableAlgorithms);
             if (algorithmNumber == 0) {
                 PrintService.printRedMessage(ErrorValue.INVALID_INPUT);
@@ -27,12 +30,7 @@ public class VariousAlgorithmsApplication {
                 Class<? extends Algorithm> algorithm = availableAlgorithms.get(--algorithmNumber);
                 executeAlgorithm(algorithm);
             }
-
-            printMenu(availableAlgorithms);
-            line = keyboard.nextLine();
         }
-
-        System.exit(0);
     }
 
     private static void printMenu(List<Class<? extends Algorithm>> availableAlgorithms) {
