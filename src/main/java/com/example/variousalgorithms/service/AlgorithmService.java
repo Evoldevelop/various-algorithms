@@ -16,6 +16,7 @@ public class AlgorithmService {
     private static final Class<PrimeNumberAlgorithm> PRIME_NUMBER_ALGORITHM = PrimeNumberAlgorithm.class;
     private static final Class<PalindromeAlgorithm> PALINDROME_ALGORITHM = PalindromeAlgorithm.class;
     private static final Class<ArmstrongAlgorithm> ARMSTRONG_ALGORITHM = ArmstrongAlgorithm.class;
+    private static final Class<FactorialAlgorithm> FACTORIAL_ALGORITHM = FactorialAlgorithm.class;
 
     /**
      * Gets all the available algorithms.

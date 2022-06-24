@@ -49,6 +49,16 @@ public class PrintService {
     }
 
     /**
+     * Prints a formatted {@link String} in console.
+     *
+     * @param format Format chosen for the message.
+     * @param args   Arguments referenced by the format specifier.
+     */
+    public static void printFormattedMessage(String format, Object... args) {
+        printMessage(getFormattedMessage(format, args));
+    }
+
+    /**
      * Prints a purple formatted {@link String} in console.
      *
      * @param format Format chosen for the message.
