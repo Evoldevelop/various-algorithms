@@ -2,7 +2,6 @@ package com.example.variousalgorithms.algorithm;
 
 import com.example.variousalgorithms.service.ConsoleService;
 import com.example.variousalgorithms.service.PrintService;
-
 /**
  * <h1>PalindromeAlgorithm</h1>
  * Algorithm that checks if an input is palindrome or not.
