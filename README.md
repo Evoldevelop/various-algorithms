@@ -18,6 +18,8 @@ To run this project, follow the next steps:
 1. Run it and enjoy.
 2. Type "quit" to terminate the program.
 
+Apart from this "game", there is also different executable
+algorithms like sorting algorithms.
 ## Observations
 For this project, I did not keep in mind producing a good code
 apart from the algorithms code. Interface implementations could be done, but
