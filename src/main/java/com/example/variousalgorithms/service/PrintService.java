@@ -22,6 +22,15 @@ public class PrintService {
     }
 
     /**
+     * Prints an {@link int} in console.
+     *
+     * @param x int to be printed.
+     */
+    public static void printMessage(int x) {
+        System.out.println(x);
+    }
+
+    /**
      * Prints a purple {@link String} in console.
      *
      * @param message Message to be printed in purple.
