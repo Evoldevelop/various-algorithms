@@ -6,7 +6,7 @@ import com.example.variousalgorithms.service.PrintService;
 /**
  * <h1>PrimeNumberAlgorithm</h1>
  * Algorithm that calculates if a number is prime or not.
- * A Prime number a number that is divisible only by itself and 1 (e.g. 2, 3, 5, 7, 11).
+ * A number is prime number when it is divisible only by itself and 1 (e.g. 2, 3, 5, 7, 11).
  */
 public class PrimeNumberAlgorithm extends Algorithm {
 
